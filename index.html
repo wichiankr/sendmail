@@ -84,9 +84,21 @@
       var firstname = $('#firstname').val();
       var lastname = $('#lastname').val();
       var email = $('#email').val();
-      var data = 'name='+firstname+'&lastname='+lastname+'&email='+email;
+      var varData = 'name='+firstname+'&lastname='+lastname+'&email='+email;
       alert(firstname);
-      console.log(data);
+      console.log(varData);
+
+      $.ajax({
+        type:'POST',
+        url:'sendmail.php',
+        data:varData,
+        success:function(data){
+          alert(data);
+        }
+
+
+      });
+
     })
 
   })
